@@ -20,6 +20,7 @@ const Head = styled(Stack)(({ theme }) => ({
 }));
 
 const Header = memo((props) => {
+  const { logo, titulo, plano, data_posicao, relatorio } = props.data;
   return (
     <Head component="header">
       <Stack
@@ -29,19 +30,17 @@ const Header = memo((props) => {
         alignItems={"flex-end"}
       >
         <Stack>
-          {props.logo && (
-            <img src={props.logo} alt="logo" width={80} height={80} />
-          )}
+          {logo && <img src={logo} alt="logo" width={80} height={80} />}
         </Stack>
         <Stack sx={{ flexGrow: 1 }}>
           <Typography variant="h6" component="div">
-            {props.titulo}
+            {titulo}
           </Typography>
           <Typography variant="body1" component="div">
-            {props.data_posicao}
+            {data_posicao}
           </Typography>
           <Typography variant="body1" component="div">
-            {props.descricao}
+            {plano}
           </Typography>
         </Stack>
         <Stack>
@@ -52,7 +51,7 @@ const Header = memo((props) => {
             )}`}
           </Typography>
           <Typography variant="body1" component="div" align="right">
-            {props.relatorio}
+            Relatório: {relatorio}
           </Typography>
         </Stack>
       </Stack>
@@ -65,11 +64,13 @@ Header.displayName = "Header";
 
 Header.propTypes = {
   children: PropTypes.node,
-  logo: PropTypes.string,
-  titulo: PropTypes.string,
-  data_posicao: PropTypes.string,
-  descricao: PropTypes.string,
-  relatorio: PropTypes.string,
+  data: PropTypes.shape({
+    logo: PropTypes.string,
+    titulo: PropTypes.string,
+    data_posicao: PropTypes.string,
+    plano: PropTypes.string,
+    relatorio: PropTypes.string,
+  }),
 };
 
 export default Header;

@@ -27,7 +27,7 @@ const Document = memo((props) => {
         <DocumentContent>{props.children}</DocumentContent>
         <DocumentFooter />
       </Box>
-      <Header />
+      <Header data={props.header} />
       <Footer />
     </DocumentWrapper>
   );
