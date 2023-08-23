@@ -19,7 +19,7 @@ const DocumentWrapper = styled(Box)(({ theme }) => ({
 
 const Document = memo((props) => {
   return (
-    <DocumentWrapper>
+    <DocumentWrapper id="document">
       <Box component="table" sx={{ width: "100%" }}>
         <DocumentHead>
           <HeaderSpace />
