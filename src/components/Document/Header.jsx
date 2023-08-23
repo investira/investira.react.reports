@@ -1,0 +1,75 @@
+import { memo } from "react";
+import PropTypes from "prop-types";
+import { dates, formats } from "investira.sdk";
+import { styled } from "@mui/material/styles";
+import { Stack, Typography } from "../wrappers";
+
+const Head = styled(Stack)(({ theme }) => ({
+  justifyContent: "flex-end",
+  marginBottom: 2,
+  position: "fixed",
+  top: 0,
+  height: "112px",
+  width: "1416px" /* número mágico da escala do pdf em landscape */,
+  padding: "16px",
+  "@media print": {
+    position: "fixed",
+    top: 0,
+    height: "112px",
+  },
+}));
+
+const Header = memo((props) => {
+  return (
+    <Head component="header">
+      <Stack
+        direction="row"
+        className="header"
+        spacing={4}
+        alignItems={"flex-end"}
+      >
+        <Stack>
+          {props.logo && (
+            <img src={props.logo} alt="logo" width={80} height={80} />
+          )}
+        </Stack>
+        <Stack sx={{ flexGrow: 1 }}>
+          <Typography variant="h6" component="div">
+            {props.titulo}
+          </Typography>
+          <Typography variant="body1" component="div">
+            {props.data_posicao}
+          </Typography>
+          <Typography variant="body1" component="div">
+            {props.descricao}
+          </Typography>
+        </Stack>
+        <Stack>
+          <Typography variant="body1" component="div" align="right">
+            {`Impresso em ${formats.formatDateCustom(
+              dates.toDate(),
+              "DD/MM/yyyy HH:mm:ss"
+            )}`}
+          </Typography>
+          <Typography variant="body1" component="div" align="right">
+            {props.relatorio}
+          </Typography>
+        </Stack>
+      </Stack>
+      {props.children}
+    </Head>
+  );
+});
+
+Header.displayName = "Header";
+
+Header.propTypes = {
+  children: PropTypes.node,
+  logo: PropTypes.string,
+  titulo: PropTypes.string,
+  data_posicao: PropTypes.string,
+  descricao: PropTypes.string,
+  relatorio: PropTypes.string,
+};
+
+export default Header;

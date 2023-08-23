@@ -1,0 +1,42 @@
+import React, { memo } from "react";
+import PropTypes from "prop-types";
+import { styled } from "@mui/material/styles";
+import { Box } from "../wrappers";
+import DocumentHead from "./DocumentHead";
+import DocumentFooter from "./DocumentFooter";
+import DocumentContent from "./DocumentContent";
+import Header from "./Header";
+import HeaderSpace from "./HeaderSpace";
+import Footer from "./Footer";
+
+const DocumentWrapper = styled(Box)(({ theme }) => ({
+  margin: "0 auto",
+  width: "1416px" /*número mágico da escala do pdf em landscape*/,
+  "@media print": {
+    margin: 0,
+  },
+}));
+
+const Document = memo((props) => {
+  return (
+    <DocumentWrapper>
+      <Box component="table" sx={{ width: "100%" }}>
+        <DocumentHead>
+          <HeaderSpace />
+        </DocumentHead>
+        <DocumentContent>{props.children}</DocumentContent>
+        <DocumentFooter />
+      </Box>
+      <Header />
+      <Footer />
+    </DocumentWrapper>
+  );
+});
+
+Document.displayName = "Document";
+
+Document.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+export default Document;
