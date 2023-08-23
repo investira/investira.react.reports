@@ -7,9 +7,6 @@ const TableHeader = memo((props) => {
     <TableHead>
       <TableRow>
         {props.cols.map((xCol, xIndex) => {
-          if (xIndex === 0) {
-            return <TableCell variant="head" key={`col-${xIndex}`}></TableCell>;
-          }
           return (
             <TableCell
               variant="head"
