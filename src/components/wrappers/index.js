@@ -5,6 +5,7 @@ export { default as CardContent } from "./CardContent";
 export { default as CardHeader } from "./CardHeader";
 export { default as CardMedia } from "./CardMedia";
 export { default as Container } from "./Container";
+export { default as CssBaseline } from "./CssBaseline";
 export { default as Divider } from "./Divider";
 export { default as Grid } from "./Grid";
 export { default as List } from "./List";
