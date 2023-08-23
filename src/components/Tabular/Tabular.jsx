@@ -37,11 +37,16 @@ const Tabular = memo((props) => {
 });
 
 Tabular.propTypes = {
-  data: PropTypes.array,
-  breaks: PropTypes.array,
-  cols: PropTypes.array,
+  data: PropTypes.array.isRequired,
+  breaks: PropTypes.array.isRequired,
+  cols: PropTypes.array.isRequired,
   totalLabels: PropTypes.object,
   soma: PropTypes.array,
+};
+
+Tabular.defaultProps = {
+  soma: [],
+  totalLabels: {},
 };
 
 Tabular.displayName = "Tabular";
