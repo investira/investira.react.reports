@@ -25,15 +25,17 @@ function renderBreaks(
   const xIndent = pIndent + 1;
 
   return pEstrutura[xFirstElement]._dataBreaks.map((xBreak, xIndex) => {
+    const breakProps = {
+      title: xBreak,
+      key: `${xFirstElement}-${xIndex}`,
+      ...(pTotalLabels && { totalLabel: pTotalLabels[xFirstElement] }),
+      cols: pCols,
+      totalData: pEstrutura[xFirstElement]._total[xIndex],
+      indent: pIndent,
+    };
+
     return (
-      <Breaks
-        title={xBreak}
-        key={`${xFirstElement}-${xIndex}`}
-        totalLabel={pTotalLabels[xFirstElement]}
-        cols={pCols}
-        totalData={pEstrutura[xFirstElement]._total[xIndex]}
-        indent={pIndent}
-      >
+      <Breaks {...breakProps}>
         {renderBreaks(
           pEstrutura[xFirstElement],
           xQuebras,

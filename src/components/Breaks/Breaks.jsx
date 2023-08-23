@@ -49,33 +49,35 @@ const Breaks = memo((props) => {
       </TableHead>
       {props.children}
 
-      <TableBody>
-        <TableRow>
-          {props.cols.map((col, colIndex) => {
-            if (colIndex === 0) {
-              return (
-                <TableCell
-                  key={colIndex}
-                  variant="body"
-                  sx={{ paddingLeft: (props.indent * 4) / 4 }}
-                >
-                  <Typography variant="caption" sx={{ fontWeight: 600 }}>
-                    {props.totalLabel}
-                  </Typography>
-                </TableCell>
-              );
-            } else {
-              return (
-                <TableCell key={colIndex} align="right">
-                  <Typography variant="caption" sx={{ fontWeight: 600 }}>
-                    {formatCell(props.totalData[col.key], "number")}
-                  </Typography>
-                </TableCell>
-              );
-            }
-          })}
-        </TableRow>
-      </TableBody>
+      {props.totalLabel && (
+        <TableBody>
+          <TableRow>
+            {props.cols.map((col, colIndex) => {
+              if (colIndex === 0) {
+                return (
+                  <TableCell
+                    key={colIndex}
+                    variant="body"
+                    sx={{ paddingLeft: (props.indent * 4) / 4 }}
+                  >
+                    <Typography variant="caption" sx={{ fontWeight: 600 }}>
+                      {props.totalLabel}
+                    </Typography>
+                  </TableCell>
+                );
+              } else {
+                return (
+                  <TableCell key={colIndex} align="right">
+                    <Typography variant="caption" sx={{ fontWeight: 600 }}>
+                      {formatCell(props.totalData[col.key], "number")}
+                    </Typography>
+                  </TableCell>
+                );
+              }
+            })}
+          </TableRow>
+        </TableBody>
+      )}
     </>
   );
 });
