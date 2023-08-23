@@ -12,6 +12,7 @@ const TableHeader = memo((props) => {
               variant="head"
               key={`col-${xIndex}`}
               sx={{ verticalAlign: "bottom" }}
+              align={xCol.type === "string" ? "left" : "right"}
             >
               <Typography variant="caption" sx={{ fontWeight: 600 }}>
                 {xCol.label}
