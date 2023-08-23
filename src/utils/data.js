@@ -35,7 +35,7 @@ function createHierarchicalBreaks(pBreaks, pData, pDataBreaks, pSomas) {
     [xFirstElement]: {
       _dataBreaks: xDataBreakValues,
       _data: xData,
-      _total: soma(pSomas, xData),
+      _total: pSomas ? soma(pSomas, xData) : [],
       ...createHierarchicalBreaks(xRestArray, pData, pDataBreaks, pSomas),
     },
   };
