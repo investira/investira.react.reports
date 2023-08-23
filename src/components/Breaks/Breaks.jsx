@@ -1,7 +1,6 @@
 import React, { memo } from "react";
 import PropTypes from "prop-types";
 import { styled } from "@mui/material/styles";
-import { formats, validators } from "investira.sdk";
 import {
   Typography,
   TableHead,
@@ -9,6 +8,7 @@ import {
   TableRow,
   TableBody,
 } from "@mui/material";
+import utils from "../../utils";
 
 const Breaks = memo((props) => {
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -17,19 +17,6 @@ const Breaks = memo((props) => {
   }));
 
   const xColSpan = props.cols.length;
-
-  function formatCell(pValue, pType) {
-    if (validators.isEmpty(pValue)) {
-      return "";
-    }
-
-    const xTypesFormat = {
-      string: (pValue) => pValue,
-      number: (pValue) => formats.formatNumber(pValue, 2, true, false),
-    };
-
-    return xTypesFormat[pType](pValue);
-  }
 
   return (
     <>
@@ -69,7 +56,10 @@ const Breaks = memo((props) => {
                 return (
                   <TableCell key={colIndex} align="right">
                     <Typography variant="caption" sx={{ fontWeight: 600 }}>
-                      {formatCell(props.totalData[col.key], "number")}
+                      {utils.table.formatCell(
+                        props.totalData[col.key],
+                        "number"
+                      )}
                     </Typography>
                   </TableCell>
                 );

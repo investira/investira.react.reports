@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { styled } from "@mui/material/styles";
 import { formats } from "investira.sdk";
 import { TableBody, TableCell, TableRow, Typography } from "@mui/material";
+import utils from "../../utils";
+
 const Ativos = memo((props) => {
   const StyledTableRow = styled(TableRow)(({ theme }) => ({
     "&:nth-of-type(even)": {
@@ -12,15 +14,6 @@ const Ativos = memo((props) => {
       border: 0,
     },
   }));
-
-  function formatCell(pValue, pType) {
-    const xTypesFormat = {
-      string: (pValue) => pValue,
-      number: (pValue) => formats.formatNumber(pValue, 2, true, false),
-    };
-
-    return xTypesFormat[pType](pValue);
-  }
 
   return (
     <TableBody>
@@ -36,10 +29,10 @@ const Ativos = memo((props) => {
                       ? { paddingLeft: (props.indent * 4) / 4 }
                       : {}
                   }
-                  align={col.type === "number" ? "right" : "left"}
+                  align={col.type === "string" ? "left" : "right"}
                 >
                   <Typography variant="caption" noWrap>
-                    {formatCell(row[col.key], col.type)}
+                    {utils.table.formatCell(row[col.key], col.type)}
                   </Typography>
                 </TableCell>
               );
