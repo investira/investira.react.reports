@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Stack, Card, Typography, Divider } from "@mui/material";
 import { Icon } from "../";
 
-const Session = (props) => {
+const Section = (props) => {
   return (
     <Stack sx={{ mb: 2 }}>
       <Card variant="outlined">
@@ -23,17 +23,15 @@ const Session = (props) => {
             <Divider />
           </>
         )}
-        {/* <Stack mx={2} my={1}> */}
         {props.children}
-        {/* </Stack> */}
       </Card>
     </Stack>
   );
 };
 
-Session.propTypes = {
+Section.propTypes = {
   label: PropTypes.string,
   iconName: PropTypes.string,
 };
 
-export default Session;
+export default Section;
