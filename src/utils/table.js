@@ -51,8 +51,17 @@ function formatCell(pValue, pType) {
   return xTypesFormat[pType](pValue);
 }
 
+function aligntCell(pType) {
+  if (["string", "date-qtd-year"].includes(pType)) {
+    return "left";
+  }
+
+  return "right";
+}
+
 const table = {
   formatCell,
+  aligntCell,
 };
 
 export default table;
