@@ -9,13 +9,13 @@ const Head = styled(Stack)(({ theme }) => ({
   marginBottom: 2,
   position: "fixed",
   top: 0,
-  height: "112px",
+  height: "148px",
   width: "1416px" /* número mágico da escala do pdf em landscape */,
   padding: "16px",
   "@media print": {
     position: "fixed",
     top: 0,
-    height: "112px",
+    height: "148px",
   },
 }));
 
