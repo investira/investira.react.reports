@@ -5,6 +5,9 @@ import { styled } from "@mui/material/styles";
 import { Stack, Typography, Divider } from "@mui/material";
 import { Icon } from "../";
 
+import iconCalendar from "../../assets/images/1385_calendar.svg";
+import iconPaper from "../../assets/images/1400_paper.svg";
+
 const Head = styled(Stack)(({ theme }) => ({
   justifyContent: "flex-end",
   marginBottom: 2,
@@ -45,7 +48,7 @@ const DocHeader = memo((props) => {
           </Stack>
           <Stack justifyContent="flex-end">
             <Stack direction="row" spacing={1} alignItems={"center"}>
-              <Icon iconName="calendar" size={24} />
+              <img src={iconCalendar} width="24px" alt={data_posicao} />
               <Typography variant="body1" component="div">
                 <b>{data_posicao}</b>
               </Typography>
@@ -56,7 +59,7 @@ const DocHeader = memo((props) => {
       <Divider />
       <Stack direction="row" justifyContent="space-between" my={1}>
         <Stack direction="row" spacing={1} alignItems={"center"}>
-          <Icon iconName="paper" size={12} />
+          <img src={iconPaper} width="12px" alt={relatorio} />
           <Typography variant="body2" component="div" align="right">
             Relatório: {relatorio}
           </Typography>
