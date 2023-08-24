@@ -1,0 +1,88 @@
+import { memo } from "react";
+import PropTypes from "prop-types";
+import { dates, formats } from "investira.sdk";
+import { styled } from "@mui/material/styles";
+import { Stack, Typography, Divider } from "@mui/material";
+import { Icon } from "../";
+
+const Head = styled(Stack)(({ theme }) => ({
+  justifyContent: "flex-end",
+  marginBottom: 2,
+  position: "fixed",
+  top: 0,
+  height: "148px",
+  width: "1416px" /* número mágico da escala do pdf em landscape */,
+  padding: "16px 4px",
+  "@media print": {
+    position: "fixed",
+    top: 0,
+    height: "148px",
+  },
+}));
+
+const DocHeader = memo((props) => {
+  const { logo, titulo, plano, data_posicao, relatorio } = props.data;
+  return (
+    <Head component="header">
+      <Stack
+        direction="row"
+        className="header"
+        spacing={4}
+        alignItems={"center"}
+        justifyContent="stretch"
+      >
+        <Stack>
+          {logo && <img src={logo} alt="logo" width={80} height={80} />}
+        </Stack>
+        <Stack direction="row" sx={{ flexGrow: 1 }}>
+          <Stack sx={{ flexGrow: 1 }}>
+            <Typography variant="h6" component="div">
+              {titulo}
+            </Typography>
+            <Typography variant="body1" component="div">
+              {plano}
+            </Typography>
+          </Stack>
+          <Stack justifyContent="flex-end">
+            <Stack direction="row" spacing={1} alignItems={"center"}>
+              <Icon iconName="calendar" size={24} />
+              <Typography variant="body1" component="div">
+                <b>{data_posicao}</b>
+              </Typography>
+            </Stack>
+          </Stack>
+        </Stack>
+      </Stack>
+      <Divider />
+      <Stack direction="row" justifyContent="space-between" my={1}>
+        <Stack direction="row" spacing={1} alignItems={"center"}>
+          <Icon iconName="paper" size={12} />
+          <Typography variant="body2" component="div" align="right">
+            Relatório: {relatorio}
+          </Typography>
+        </Stack>
+        <Typography variant="body2" component="div" align="right">
+          {`Criado em ${formats.formatDateCustom(
+            dates.toDate(),
+            "DD/MM/yyyy HH:mm:ss"
+          )}`}
+        </Typography>
+      </Stack>
+    </Head>
+  );
+});
+
+DocHeader.displayName = "DocHeader";
+
+DocHeader.propTypes = {
+  children: PropTypes.node,
+  data: PropTypes.shape({
+    logo: PropTypes.string,
+    titulo: PropTypes.string,
+    data_posicao: PropTypes.string,
+    plano: PropTypes.string,
+    relatorio: PropTypes.string,
+  }),
+};
+
+export default DocHeader;
