@@ -6,6 +6,7 @@ import DocumentHead from "./DocumentHead";
 import DocumentFooter from "./DocumentFooter";
 import DocumentContent from "./DocumentContent";
 import Header from "./Header";
+import DocHeader from "./DocHeader";
 import HeaderSpace from "./HeaderSpace";
 import Footer from "./Footer";
 
@@ -27,7 +28,8 @@ const Document = memo((props) => {
         <DocumentContent>{props.children}</DocumentContent>
         <DocumentFooter />
       </Box>
-      <Header data={props.header} />
+      {/* <Header data={props.header} /> */}
+      <DocHeader data={props.header} />
       <Footer />
     </DocumentWrapper>
   );
