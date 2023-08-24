@@ -29,7 +29,7 @@ const Ativos = memo((props) => {
                       ? { paddingLeft: (props.indent * 4) / 4 }
                       : {}
                   }
-                  align={col.type === "string" ? "left" : "right"}
+                  align={utils.table.aligntCell(col.type)}
                 >
                   <Typography variant="caption" noWrap>
                     {utils.table.formatCell(row[col.key], col.type)}
