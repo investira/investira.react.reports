@@ -6,3 +6,5 @@ export { default as Document } from "./Document";
 export { default as TableContent } from "./TableContent";
 export { default as TableHeader } from "./TableHeader";
 export { default as Tabular } from "./Tabular";
+export { default as TotalCard } from "./TotalCard";
+export { default as Session } from "./Session";
