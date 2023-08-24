@@ -45,13 +45,13 @@ const Header = memo((props) => {
         </Stack>
         <Stack>
           <Typography variant="body1" component="div" align="right">
+            Relatório: {relatorio}
+          </Typography>
+          <Typography variant="body1" component="div" align="right">
             {`Impresso em ${formats.formatDateCustom(
               dates.toDate(),
               "DD/MM/yyyy HH:mm:ss"
             )}`}
-          </Typography>
-          <Typography variant="body1" component="div" align="right">
-            Relatório: {relatorio}
           </Typography>
         </Stack>
       </Stack>
