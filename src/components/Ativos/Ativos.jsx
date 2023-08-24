@@ -50,6 +50,10 @@ Ativos.propTypes = {
   indent: PropTypes.number,
 };
 
+Ativos.defaultProps = {
+  indent: 1,
+};
+
 Ativos.displayName = "Ativos";
 
 export default Ativos;
