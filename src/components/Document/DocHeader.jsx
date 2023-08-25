@@ -14,7 +14,7 @@ const Head = styled(Stack)(({ theme }) => ({
   position: "fixed",
   top: 0,
   height: "148px",
-  width: "1416px" /* número mágico da escala do pdf em landscape */,
+  width: "1572px" /* número mágico da escala do pdf em landscape */,
   padding: "16px 4px",
   "@media print": {
     position: "fixed",

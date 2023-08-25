@@ -12,7 +12,8 @@ import Footer from "./Footer";
 
 const DocumentWrapper = styled(Box)(({ theme }) => ({
   margin: "0 auto",
-  width: "1416px" /*número mágico da escala do pdf em landscape*/,
+  width: "1572px" /*número mágico da escala do pdf em landscape*/,
+
   "@media print": {
     margin: 0,
   },
