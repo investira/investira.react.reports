@@ -24,7 +24,7 @@ const Head = styled(Stack)(({ theme }) => ({
 }));
 
 const DocHeader = memo((props) => {
-  const { logo, titulo, plano, data_posicao, relatorio } = props.data;
+  const { logo, relatorio, plano, data_posicao, breadcrumb } = props.data;
   return (
     <Head component="header">
       <Stack
@@ -40,7 +40,7 @@ const DocHeader = memo((props) => {
         <Stack direction="row" sx={{ flexGrow: 1 }}>
           <Stack sx={{ flexGrow: 1 }}>
             <Typography variant="h6" component="div">
-              {titulo}
+              {relatorio}
             </Typography>
             <Typography variant="body1" component="div">
               {plano}
@@ -59,10 +59,14 @@ const DocHeader = memo((props) => {
       <Divider />
       <Stack direction="row" justifyContent="space-between" my={1}>
         <Stack direction="row" spacing={1} alignItems={"center"}>
-          <img src={iconPaper} width="12px" alt={relatorio} />
-          <Typography variant="body2" component="div" align="right">
-            Relatório: {relatorio}
-          </Typography>
+          {breadcrumb && (
+            <>
+              <img src={iconPaper} width="12px" alt={breadcrumb} />
+              <Typography variant="body2" component="div" align="right">
+                {breadcrumb}
+              </Typography>
+            </>
+          )}
         </Stack>
         <Typography variant="body2" component="div" align="right">
           {`Criado em ${formats.formatDateCustom(
@@ -81,10 +85,10 @@ DocHeader.propTypes = {
   children: PropTypes.node,
   data: PropTypes.shape({
     logo: PropTypes.string,
-    titulo: PropTypes.string,
+    relatorio: PropTypes.string,
     data_posicao: PropTypes.string,
     plano: PropTypes.string,
-    relatorio: PropTypes.string,
+    breadcrumb: PropTypes.string,
   }),
 };
 
