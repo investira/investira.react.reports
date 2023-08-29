@@ -6,7 +6,7 @@ import { Stack, Typography, Divider } from "@mui/material";
 import { Icon } from "../";
 
 import iconCalendar from "../../assets/images/1385_calendar.svg";
-import iconPaper from "../../assets/images/1400_paper.svg";
+import iconLocation from "../../assets/images/1220_location.svg";
 
 const Head = styled(Stack)(({ theme }) => ({
   justifyContent: "flex-end",
@@ -61,7 +61,7 @@ const DocHeader = memo((props) => {
         <Stack direction="row" spacing={1} alignItems={"center"}>
           {breadcrumb && (
             <>
-              <img src={iconPaper} width="12px" alt={breadcrumb} />
+              <img src={iconLocation} width="12px" alt={breadcrumb} />
               <Typography variant="body2" component="div" align="right">
                 {breadcrumb}
               </Typography>
