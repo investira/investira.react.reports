@@ -8,6 +8,5 @@ export { default as MediaPonderadaCard } from "./MediaPonderadaCard";
 export { default as TableContent } from "./TableContent";
 export { default as TableHeader } from "./TableHeader";
 export { default as Tabular } from "./Tabular";
-export { default as TotalCard } from "./TotalCard";
 export { default as Section } from "./Section";
 export { default as SomaCard } from "./SomaCard";
