@@ -17,6 +17,7 @@ const SomaCard = (props) => {
     <InfoCard
       label={props.label}
       value={props.value || formatedValue || "Sem dados"}
+      sufix={props.sufix}
     />
   );
 };
@@ -34,6 +35,7 @@ SomaCard.propTypes = {
   }),
   showCurrency: PropTypes.bool,
   separateThousand: PropTypes.bool,
+  sufix: PropTypes.string,
 };
 
 SomaCard.defaultProps = {

@@ -16,7 +16,7 @@ const InfoCard = (props) => {
             {props.label}
           </Typography>
           <Typography variant="h5" component="div">
-            {props.value}
+            {`${props.value} ${props.sufix}`}
           </Typography>
         </CardContent>
       </Card>
@@ -29,6 +29,11 @@ InfoCard.displayName = "InfoCard";
 InfoCard.propTypes = {
   label: PropTypes.string,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  sufix: PropTypes.string,
+};
+
+InfoCard.defaultProps = {
+  sufix: "",
 };
 
 export default InfoCard;

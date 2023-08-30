@@ -12,7 +12,13 @@ const MediaPonderadaCard = memo((props) => {
     props.showCurrency
   );
 
-  return <InfoCard label={props.label} value={formatedValue || 0} />;
+  return (
+    <InfoCard
+      label={props.label}
+      value={formatedValue || 0}
+      sufix={props.sufix}
+    />
+  );
 });
 
 MediaPonderadaCard.propTypes = {
@@ -23,6 +29,7 @@ MediaPonderadaCard.propTypes = {
   decimais: PropTypes.number,
   showCurrency: PropTypes.bool,
   separateThousand: PropTypes.bool,
+  sufix: PropTypes.string,
 };
 
 MediaPonderadaCard.defaultProps = {
