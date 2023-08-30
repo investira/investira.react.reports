@@ -10,3 +10,4 @@ export { default as TableHeader } from "./TableHeader";
 export { default as Tabular } from "./Tabular";
 export { default as Section } from "./Section";
 export { default as SomaCard } from "./SomaCard";
+export { default as CompositionChart } from "./CompositionChart";
