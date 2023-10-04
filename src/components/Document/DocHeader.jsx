@@ -24,7 +24,8 @@ const Head = styled(Stack)(({ theme }) => ({
 }));
 
 const DocHeader = memo((props) => {
-  const { logo, relatorio, plano, data_posicao, breadcrumb } = props.data;
+  const { logo, relatorio, plano, data_posicao, breadcrumb, entidade } =
+    props.data;
   return (
     <Head component="header">
       <Stack
@@ -46,12 +47,28 @@ const DocHeader = memo((props) => {
               {plano}
             </Typography>
           </Stack>
-          <Stack justifyContent="flex-end">
+          <Stack
+            justifyContent="flex-end"
+            alignItems={"flex-end"}
+            spacing={0.5}
+          >
             <Stack direction="row" spacing={1} alignItems={"center"}>
               <img src={iconCalendar} width="24px" alt={data_posicao} />
               <Typography variant="body1" component="div">
-                <b>{data_posicao}</b>
+                <b>
+                  {formats.formatDateCustom(
+                    dates.toDate(data_posicao),
+                    "DD/MM/yyyy"
+                  )}
+                </b>
               </Typography>
+            </Stack>
+            <Stack>
+              {entidade && (
+                <Typography variant="body2" component="div" align="right">
+                  {entidade}
+                </Typography>
+              )}
             </Stack>
           </Stack>
         </Stack>
