@@ -6,12 +6,14 @@ import DocumentHead from "./DocumentHead";
 import DocumentFooter from "./DocumentFooter";
 import DocumentContent from "./DocumentContent";
 import Header from "./Header";
+import DocHeader from "./DocHeader";
 import HeaderSpace from "./HeaderSpace";
 import Footer from "./Footer";
 
 const DocumentWrapper = styled(Box)(({ theme }) => ({
   margin: "0 auto",
-  width: "1416px" /*número mágico da escala do pdf em landscape*/,
+  width: "1572px" /*número mágico da escala do pdf em landscape*/,
+
   "@media print": {
     margin: 0,
   },
@@ -27,7 +29,8 @@ const Document = memo((props) => {
         <DocumentContent>{props.children}</DocumentContent>
         <DocumentFooter />
       </Box>
-      <Header data={props.header} />
+      {/* <Header data={props.header} /> */}
+      <DocHeader data={props.header} />
       <Footer />
     </DocumentWrapper>
   );

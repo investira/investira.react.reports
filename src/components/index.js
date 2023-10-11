@@ -1,8 +1,16 @@
 export * from "./wrappers/";
 export { default as Ativos } from "./Ativos";
 export { default as Breaks } from "./Breaks";
-export { default as Icon } from "./Icon";
 export { default as Document } from "./Document";
+export { default as Icon } from "./Icon";
+export { default as InfoCard } from "./InfoCard";
+export { default as FinCard } from "./FinCard";
+export { default as NumberCard } from "./NumberCard";
+export { default as PonderadaCard } from "./PonderadaCard";
+export { default as MediaPonderadaCard } from "./MediaPonderadaCard";
 export { default as TableContent } from "./TableContent";
 export { default as TableHeader } from "./TableHeader";
 export { default as Tabular } from "./Tabular";
+export { default as Section } from "./Section";
+export { default as SomaCard } from "./SomaCard";
+export { default as CompositionChart } from "./CompositionChart";

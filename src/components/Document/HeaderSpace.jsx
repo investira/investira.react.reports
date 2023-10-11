@@ -6,7 +6,7 @@ const HeaderSpace = memo(() => {
     <Stack
       component="div"
       sx={{
-        height: "112px",
+        height: "148px",
       }}
     ></Stack>
   );

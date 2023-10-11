@@ -9,13 +9,13 @@ const Head = styled(Stack)(({ theme }) => ({
   marginBottom: 2,
   position: "fixed",
   top: 0,
-  height: "112px",
+  height: "148px",
   width: "1416px" /* número mágico da escala do pdf em landscape */,
   padding: "16px",
   "@media print": {
     position: "fixed",
     top: 0,
-    height: "112px",
+    height: "148px",
   },
 }));
 
@@ -45,13 +45,13 @@ const Header = memo((props) => {
         </Stack>
         <Stack>
           <Typography variant="body1" component="div" align="right">
+            Relatório: {relatorio}
+          </Typography>
+          <Typography variant="body1" component="div" align="right">
             {`Impresso em ${formats.formatDateCustom(
               dates.toDate(),
               "DD/MM/yyyy HH:mm:ss"
             )}`}
-          </Typography>
-          <Typography variant="body1" component="div" align="right">
-            Relatório: {relatorio}
           </Typography>
         </Stack>
       </Stack>
