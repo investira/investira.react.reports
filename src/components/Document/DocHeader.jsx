@@ -3,10 +3,11 @@ import PropTypes from "prop-types";
 import { dates, formats } from "investira.sdk";
 import { styled } from "@mui/material/styles";
 import { Stack, Typography, Divider } from "@mui/material";
-import { Icon } from "../";
+//import { Icon } from "../";
 
 import iconCalendar from "../../assets/images/1385_calendar.svg";
-import iconLocation from "../../assets/images/1220_location.svg";
+//import iconLocation from "../../assets/images/1220_location.svg";
+import iconWallet from "../../assets/images/1752_wallet.svg";
 
 const Head = styled(Stack)(({ theme }) => ({
   justifyContent: "flex-end",
@@ -24,7 +25,7 @@ const Head = styled(Stack)(({ theme }) => ({
 }));
 
 const DocHeader = memo((props) => {
-  const { logo, relatorio, plano, data_posicao, breadcrumb, entidade } =
+  const { logo, relatorio, plano, data_posicao, carteira, entidade } =
     props.data;
   return (
     <Head component="header">
@@ -76,11 +77,11 @@ const DocHeader = memo((props) => {
       <Divider />
       <Stack direction="row" justifyContent="space-between" my={1}>
         <Stack direction="row" spacing={1} alignItems={"center"}>
-          {breadcrumb && (
+          {carteira && (
             <>
-              <img src={iconLocation} width="12px" alt={breadcrumb} />
+              <img src={iconWallet} width="12px" alt={carteira} />
               <Typography variant="body2" component="div" align="right">
-                {breadcrumb}
+                Carteira: {carteira}
               </Typography>
             </>
           )}
