@@ -106,7 +106,7 @@ DocHeader.propTypes = {
     relatorio: PropTypes.string,
     data_posicao: PropTypes.string,
     plano: PropTypes.string,
-    breadcrumb: PropTypes.string,
+    carteira: PropTypes.string,
   }),
 };
 
