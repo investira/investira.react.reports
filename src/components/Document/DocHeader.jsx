@@ -44,9 +44,19 @@ const DocHeader = memo((props) => {
             <Typography variant="h6" component="div">
               {relatorio}
             </Typography>
-            <Typography variant="body1" component="div">
+            <Stack direction="row" spacing={1} alignItems={"center"}>
+              {carteira && (
+                <>
+                  {/* <img src={iconWallet} width="16px" alt={carteira} /> */}
+                  <Typography variant="body1" component="div">
+                    {carteira}
+                  </Typography>
+                </>
+              )}
+            </Stack>
+            {/* <Typography variant="body1" component="div">
               {plano}
-            </Typography>
+            </Typography> */}
           </Stack>
           <Stack
             justifyContent="flex-end"
@@ -77,14 +87,14 @@ const DocHeader = memo((props) => {
       <Divider />
       <Stack direction="row" justifyContent="space-between" my={1}>
         <Stack direction="row" spacing={1} alignItems={"center"}>
-          {carteira && (
+          {/* {carteira && (
             <>
               <img src={iconWallet} width="12px" alt={carteira} />
               <Typography variant="body2" component="div" align="right">
                 Carteira: {carteira}
               </Typography>
             </>
-          )}
+          )} */}
         </Stack>
         <Typography variant="body2" component="div" align="right">
           {`Criado em ${formats.formatDateCustom(
