@@ -1,6 +1,15 @@
 import { createTheme } from "@mui/material/styles";
 
 export const reportsTheme = createTheme({
+  components: {
+    MuiTableCell: {
+      styleOverrides: {
+        root: {
+          padding: 8,
+        },
+      },
+    },
+  },
   typography: {
     fontFamily: [
       "Montserrat",
