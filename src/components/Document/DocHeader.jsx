@@ -22,6 +22,7 @@ const Head = styled(Stack)(({ theme }) => ({
     top: 0,
     height: "148px",
   },
+  backgroundColor: "#FFF",
 }));
 
 const DocHeader = memo((props) => {
