@@ -55,9 +55,11 @@ const DocHeader = memo((props) => {
                 </>
               )}
             </Stack>
-            {/* <Typography variant="body1" component="div">
-              {plano}
-            </Typography> */}
+            {plano && (
+              <Typography variant="body1" component="div">
+                {plano}
+              </Typography>
+            )}
           </Stack>
           <Stack
             justifyContent="flex-end"
