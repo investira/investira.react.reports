@@ -2,7 +2,7 @@ import { memo } from "react";
 import PropTypes from "prop-types";
 import { dates, formats } from "investira.sdk";
 import { styled } from "@mui/material/styles";
-import { Stack, Typography, Divider } from "@mui/material";
+import { Box, Stack, Typography, Divider } from "@mui/material";
 //import { Icon } from "../";
 
 import iconCalendar from "../../assets/images/1385_calendar.svg";
@@ -36,9 +36,19 @@ const DocHeader = memo((props) => {
         spacing={4}
         alignItems={"center"}
         justifyContent="stretch"
+        mb={1}
       >
         <Stack>
-          {logo && <img src={logo} alt="logo" width={80} height={80} />}
+          {logo && (
+            <Box
+              component="img"
+              src={logo}
+              alt="logo"
+              width={72}
+              height={72}
+              sx={{ borderRadius: 1 }}
+            />
+          )}
         </Stack>
         <Stack direction="row" sx={{ flexGrow: 1 }}>
           <Stack sx={{ flexGrow: 1 }}>
