@@ -5,7 +5,7 @@ export const reportsTheme = createTheme({
     MuiTableCell: {
       styleOverrides: {
         root: {
-          padding: 8,
+          padding: 6,
         },
       },
     },
