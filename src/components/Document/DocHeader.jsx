@@ -7,7 +7,7 @@ import { Box, Stack, Typography, Divider } from "@mui/material";
 
 import iconCalendar from "../../assets/images/1385_calendar.svg";
 //import iconLocation from "../../assets/images/1220_location.svg";
-import iconWallet from "../../assets/images/1752_wallet.svg";
+//import iconWallet from "../../assets/images/1752_wallet.svg";
 
 const Head = styled(Stack)(({ theme }) => ({
   justifyContent: "flex-end",
@@ -26,8 +26,15 @@ const Head = styled(Stack)(({ theme }) => ({
 }));
 
 const DocHeader = memo((props) => {
-  const { logo, relatorio, plano, data_posicao, carteira, entidade } =
-    props.data;
+  const {
+    logo,
+    relatorio,
+    info,
+    data_posicao,
+    carteira,
+    entidade,
+    consolidacao,
+  } = props.data;
   return (
     <Head component="header">
       <Stack
@@ -65,9 +72,9 @@ const DocHeader = memo((props) => {
                 </>
               )}
             </Stack>
-            {plano && (
+            {info && (
               <Typography variant="body1" component="div">
-                {plano}
+                {info}
               </Typography>
             )}
           </Stack>
@@ -100,14 +107,13 @@ const DocHeader = memo((props) => {
       <Divider />
       <Stack direction="row" justifyContent="space-between" my={1}>
         <Stack direction="row" spacing={1} alignItems={"center"}>
-          {/* {carteira && (
+          {consolidacao && (
             <>
-              <img src={iconWallet} width="12px" alt={carteira} />
               <Typography variant="body2" component="div" align="right">
-                Carteira: {carteira}
+                Consolidação por Emissor: {consolidacao}
               </Typography>
             </>
-          )} */}
+          )}
         </Stack>
         <Typography variant="body2" component="div" align="right">
           {`Criado em ${formats.formatDateCustom(

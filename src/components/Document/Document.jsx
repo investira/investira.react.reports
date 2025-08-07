@@ -20,6 +20,7 @@ const DocumentWrapper = styled(Box)(({ theme }) => ({
 }));
 
 const Document = memo((props) => {
+  console.log(props);
   return (
     <DocumentWrapper id="document">
       <Box component="table" sx={{ width: "100%" }}>

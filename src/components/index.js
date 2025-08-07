@@ -3,6 +3,7 @@ export { default as Ativos } from "./Ativos";
 export { default as Breaks } from "./Breaks";
 export { default as Document } from "./Document";
 export { default as Icon } from "./Icon";
+export { default as ImageWithFallback } from "./ImageWithFallback";
 export { default as InfoCard } from "./InfoCard";
 export { default as FinCard } from "./FinCard";
 export { default as NumberCard } from "./NumberCard";

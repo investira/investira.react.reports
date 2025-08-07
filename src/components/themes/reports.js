@@ -26,4 +26,10 @@ export const reportsTheme = createTheme({
     fontWeightMedium: 600,
     fontWeightLight: 400,
   },
+  palette: {
+    common: {
+      black: "#000000",
+      white: "#FFFFFF",
+    },
+  },
 });
