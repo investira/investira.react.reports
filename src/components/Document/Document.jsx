@@ -20,7 +20,6 @@ const DocumentWrapper = styled(Box)(({ theme }) => ({
 }));
 
 const Document = memo((props) => {
-  console.log(props);
   return (
     <DocumentWrapper id="document">
       <Box component="table" sx={{ width: "100%" }}>
@@ -30,7 +29,6 @@ const Document = memo((props) => {
         <DocumentContent>{props.children}</DocumentContent>
         <DocumentFooter />
       </Box>
-      {/* <Header data={props.header} /> */}
       <DocHeader data={props.header} />
       <Footer />
     </DocumentWrapper>

@@ -34,6 +34,7 @@ const DocHeader = memo((props) => {
     carteira,
     entidade,
     consolidacao,
+    consolidacao_por_emissor = null,
   } = props.data;
   return (
     <Head component="header">
@@ -65,9 +66,8 @@ const DocHeader = memo((props) => {
             <Stack direction="row" spacing={1} alignItems={"center"}>
               {carteira && (
                 <>
-                  {/* <img src={iconWallet} width="16px" alt={carteira} /> */}
                   <Typography variant="body1" component="div">
-                    {carteira}
+                    {consolidacao_por_emissor === "P" ? consolidacao : carteira}
                   </Typography>
                 </>
               )}
@@ -107,7 +107,7 @@ const DocHeader = memo((props) => {
       <Divider />
       <Stack direction="row" justifyContent="space-between" my={1}>
         <Stack direction="row" spacing={1} alignItems={"center"}>
-          {consolidacao && (
+          {consolidacao && consolidacao_por_emissor !== "P" && (
             <>
               <Typography variant="body2" component="div" align="right">
                 Consolidação por Emissor: {consolidacao}

@@ -9,7 +9,6 @@ const InfoCard = (props) => {
   }
 
   return (
-    // <Stack sx={{ ...props.sx, py: 2 }} flexGrow={1}>
     <Card
       variant="outlined"
       sx={{
@@ -38,7 +37,6 @@ const InfoCard = (props) => {
         </Stack>
       </Stack>
     </Card>
-    // </Stack>
   );
 };
 
