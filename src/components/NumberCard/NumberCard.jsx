@@ -16,6 +16,7 @@ const NumberCard = (props) => {
       label={props.label}
       value={formatedValue || 0}
       sufix={props.sufix}
+      descricao={props.descricao}
     />
   );
 };

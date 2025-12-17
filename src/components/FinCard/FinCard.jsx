@@ -11,6 +11,7 @@ const FinCard = (props) => {
       decimais={props.decimais}
       showCurrency={props.showCurrency}
       separateThousand={props.separateThousand}
+      descricao={props.descricao}
     />
   );
 };
