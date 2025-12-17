@@ -3,11 +3,8 @@ import PropTypes from "prop-types";
 import { dates, formats } from "investira.sdk";
 import { styled } from "@mui/material/styles";
 import { Box, Stack, Typography, Divider } from "@mui/material";
-//import { Icon } from "../";
 
 import iconCalendar from "../../assets/images/1385_calendar.svg";
-//import iconLocation from "../../assets/images/1220_location.svg";
-//import iconWallet from "../../assets/images/1752_wallet.svg";
 
 const Head = styled(Stack)(({ theme }) => ({
   justifyContent: "flex-end",
