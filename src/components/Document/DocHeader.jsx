@@ -32,6 +32,7 @@ const DocHeader = memo((props) => {
     entidade,
     consolidacao,
     consolidacao_por_emissor = null,
+    registrador = null,
   } = props.data;
   return (
     <Head component="header">
@@ -75,20 +76,11 @@ const DocHeader = memo((props) => {
               </Typography>
             )}
           </Stack>
-          <Stack
-            justifyContent="flex-end"
-            alignItems={"flex-end"}
-            spacing={0.5}
-          >
+          <Stack justifyContent="flex-end" alignItems={"flex-end"} spacing={0.5}>
             <Stack direction="row" spacing={1} alignItems={"center"}>
               <img src={iconCalendar} width="24px" alt={data_posicao} />
               <Typography variant="body1" component="div">
-                <b>
-                  {formats.formatDateCustom(
-                    dates.toDate(data_posicao),
-                    "DD/MM/yyyy"
-                  )}
-                </b>
+                <b>{formats.formatDateCustom(dates.toDate(data_posicao), "DD/MM/yyyy")}</b>
               </Typography>
             </Stack>
             <Stack>
@@ -112,12 +104,16 @@ const DocHeader = memo((props) => {
             </>
           )}
         </Stack>
-        <Typography variant="body2" component="div" align="right">
-          {`Criado em ${formats.formatDateCustom(
-            dates.toDate(),
-            "DD/MM/yyyy HH:mm:ss"
-          )}`}
-        </Typography>
+        <Stack direction="row" spacing={1} alignItems={"center"} gap={2}>
+          {registrador && (
+            <Typography variant="body2" component="div" align="right">
+              {registrador}
+            </Typography>
+          )}
+          <Typography variant="body2" component="div" align="right">
+            {`Criado em ${formats.formatDateCustom(dates.toDate(), "DD/MM/yyyy HH:mm:ss")}`}
+          </Typography>
+        </Stack>
       </Stack>
     </Head>
   );
